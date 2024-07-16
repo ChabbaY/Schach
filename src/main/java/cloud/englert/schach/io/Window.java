@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author Linus Englert
  */
-public class Window extends JFrame {
+public final class Window extends JFrame {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -60,7 +60,7 @@ public class Window extends JFrame {
      *
      * @param placement figure matrix
      */
-    public void paint(Figure[]... placement) {
+    public void paint(final Figure[]... placement) {
         for (int row = 0; row < 8; row++) {
             for (int column = 0; column < 8; column++) {
                 if (placement[row][column] == null) {
@@ -95,7 +95,7 @@ public class Window extends JFrame {
      *
      * @param highlights where the selected figure can move
      */
-    public void colorBoard(int[]... highlights) {
+    public void colorBoard(final int[]... highlights) {
         colorBoard();
         for (int[] highlight : highlights) {
             buttons[highlight[0]][highlight[1]].setBackground(new Color(0, 255, 0));

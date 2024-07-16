@@ -10,7 +10,7 @@ import java.util.List;
  *
  * @author Linus Englert
  */
-public class Bishop extends Figure {
+public final class Bishop extends Figure {
     private final List<int[]> moves = new ArrayList<>();
 
     /**
@@ -18,13 +18,13 @@ public class Bishop extends Figure {
      *
      * @param isWhite true if it is a white figure
      */
-    public Bishop(boolean isWhite) {
-        super(isWhite, "Läufer");
+    public Bishop(final boolean isWhite) {
+        super(isWhite, FigureNames.BISHOP.name());
     }
 
     @Override
     public String getUnicode() {
-        if (isWhite) {
+        if (isWhite()) {
             return "\u2657";
         }
         else {
@@ -33,9 +33,9 @@ public class Bishop extends Figure {
     }
 
     @Override
-    public int[][] getPossibleMoves(Figure[][] placement, int row, int column) {
+    public int[][] getPossibleMoves(final Figure[][] placement, final int row, final int column) {
         moves.clear();
-        if ((Main.whiteTurn == isWhite) && Main.kingInChess()) {
+        if ((Main.isWhiteTurn() == isWhite()) && Main.kingInChess()) {
             return new int[0][];
         }
 
@@ -97,21 +97,17 @@ public class Bishop extends Figure {
     }
 
     @Override
-    public boolean movePossible(Figure[][] placement, int fromRow, int fromColumn, int toRow, int toColumn) {
+    public boolean movePossible(final Figure[][] placement, final int fromRow, final int fromColumn,
+                                final int toRow, final int toColumn) {
         //außerhalb der Grenzen
         if ((toRow > 7) || (toRow < 0) || (toColumn > 7) || (toColumn < 0)) {
             return false;
         }
         //eigene Figur im Weg
-        if ((placement[toRow][toColumn] != null) && (placement[toRow][toColumn].isWhite == isWhite)) {
+        if ((placement[toRow][toColumn] != null) && (placement[toRow][toColumn].isWhite() == isWhite())) {
             return false;
         }
 
-        if (Main.whiteTurn == isWhite) {
-            return Main.moveValid(fromRow, fromColumn, toRow, toColumn);
-        }
-        else {
-            return true;
-        }
+        return Main.isWhiteTurn() != isWhite() || Main.moveValid(fromRow, fromColumn, toRow, toColumn);
     }
 }

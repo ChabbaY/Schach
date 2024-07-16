@@ -6,19 +6,38 @@ package cloud.englert.schach.figures;
  * @author Linus Englert
  */
 public abstract class Figure {
-    public boolean isWhite;
-    public String name;
-    public int movements = 0;
+    private final boolean white;
+    private final String name;
+    private int movements = 0;
 
     /**
      * Creates a new chess figure.
      *
-     * @param isWhite true for a white, false for a black figure
+     * @param white true for a white, false for a black figure
      * @param name name of the figure
      */
-    public Figure(boolean isWhite, String name) {
-        this.isWhite = isWhite;
+    public Figure(final boolean white, final String name) {
+        this.white = white;
         this.name = name;
+    }
+
+    public boolean isWhite() {
+        return white;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getMovements() {
+        return movements;
+    }
+
+    /**
+     * Increments the movements by 1.
+     */
+    public void incrementMovements() {
+        movements++;
     }
 
     /**

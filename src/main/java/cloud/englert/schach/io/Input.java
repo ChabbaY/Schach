@@ -1,41 +1,48 @@
 package cloud.englert.schach.io;
 
+import cloud.englert.schach.figures.FigureNames;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import java.util.logging.Logger;
 
 /**
  * Processes user inputs.
  *
  * @author Linus Englert
  */
-public class Input {
+public final class Input {
+    private static final Logger LOGGER = Logger.getLogger(Input.class.getSimpleName());
+
+    private Input() { }
+
     /**
      * Reads an input.
      *
      * @return the input string
      */
-    public static String input() {
+    public static FigureNames input() {
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            do {
-                System.out.println("Queen (Q) / Rook (R) / Bishop (B) / Knight (N)");
+            while (true) {
+                LOGGER.info("Please enter your choice (Queen (Q) / Rook (R) / Bishop (B) / Knight (N)): ");
                 switch(br.readLine()) {
                     case "Q":
-                        return "Dame";
+                        return FigureNames.QUEEN;
                     case "R":
-                        return "Turm";
+                        return FigureNames.ROOK;
                     case "B":
-                        return "Läufer";
+                        return FigureNames.BISHOP;
                     case "N":
-                        return "Springer";
+                        return FigureNames.KNIGHT;
                     default:
-                        System.out.println("Inkorrekte Eingabe, bitte noch einmal versuchen...");
+                        LOGGER.warning("Inkorrekte Eingabe, bitte noch einmal versuchen...");
                 }
             }
-            while (true);
         }
         catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.severe("Could not process input: " + e.getMessage());
         }
 
         return null;

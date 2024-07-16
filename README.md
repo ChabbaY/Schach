@@ -1,11 +1,27 @@
-# Schach #
-2021/06/15
+# Chess
+first version 2021/06/15
 
-# Author #
+## Author
 Linus Englert
 
-# Description #
-Schachspiel - Spieler gegen Spieler<br/>
-Hervorheben möglicher Züge<br/>
-Alle Sonderzüge: en passant, Rochade, Umwandlung<br/>
-Verzicht auf Grafiken mithilfe von Unicode -> mit 24 kb sehr handlich
+## Description
+Chess game - Player vs. Player<br/>
+
+Highlighting of possible moves<br/>
+
+All special moves: en passant, Rochade, transformation<br/>
+
+Unicode instead of large graphics -> only 24 kb size
+
+## Figures
+N = Knight / Springer
+
+B = Bishop / Läufer
+
+R = Rook / Turm
+
+Q = Queen / Dame
+
+K = King / König
+
+P = Pawn / Bauer

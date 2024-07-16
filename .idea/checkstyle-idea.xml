@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CheckStyle-IDEA" serialisationVersion="2">
+    <checkstyleVersion>10.17.0</checkstyleVersion>
+    <scanScope>JavaOnlyWithTests</scanScope>
+    <scanBeforeCheckin>true</scanBeforeCheckin>
+    <option name="activeLocationIds">
+      <option value="linus-englert-production-rules" />
+      <option value="linus-englert-testing-rules" />
+    </option>
+    <option name="locations">
+      <list>
+        <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
+        <ConfigurationLocation id="linus-englert-production-rules" type="PROJECT_RELATIVE" scope="Production" description="Linus' CheckStyle production rules ">$PROJECT_DIR$/etc/checkstyle-java-configuration.xml</ConfigurationLocation>
+        <ConfigurationLocation id="linus-englert-testing-rules" type="PROJECT_RELATIVE" scope="Tests" description="Linus' CheckStyle testing rules">$PROJECT_DIR$/etc/checkstyle-tests-configuration.xml</ConfigurationLocation>
+      </list>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Schach" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="cloud.englert.schach.Main" />
+    <module name="Schach" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

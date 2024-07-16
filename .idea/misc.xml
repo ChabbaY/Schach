@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="PDMPlugin">
+    <option name="customRuleSets">
+      <list>
+        <option value="$PROJECT_DIR$/etc/pmd-java-configuration.xml" />
+        <option value="$PROJECT_DIR$/etc/pmd-tests-configuration.xml" />
+      </list>
+    </option>
+    <option name="optionKeyToValue">
+      <map>
+        <entry key="Statistics URL" value="" />
+        <entry key="Target JDK" value="20-preview" />
+        <entry key="Threads" value="12" />
+      </map>
+    </option>
+    <option name="skipTestSources" value="false" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
